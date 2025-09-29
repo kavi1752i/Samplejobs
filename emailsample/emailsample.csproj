@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
@@ -11,14 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\emailsample\emailsample.csproj" />
     <ProjectReference Include="..\JSON javascript\JSON_ThreadOperation.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="data\javascript.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
