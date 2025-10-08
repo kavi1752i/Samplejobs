@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\database\DBConnection.csproj" />
     <ProjectReference Include="..\emailsample\emailsample.csproj" />
     <ProjectReference Include="..\JSON javascript\JSON_ThreadOperation.csproj" />
   </ItemGroup>

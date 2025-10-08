@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samplejobs", "Samplejobs\Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "emailsample", "emailsample\emailsample.csproj", "{41099928-0CD0-45C9-9521-E4B168ABAF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON_ThreadOperation", "JSON javascript\JSON_ThreadOperation.csproj", "{E381F93F-BEF0-4D55-8DD0-EF3B333DCF19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSON_ThreadOperation", "JSON javascript\JSON_ThreadOperation.csproj", "{E381F93F-BEF0-4D55-8DD0-EF3B333DCF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBConnection", "database\DBConnection.csproj", "{BF8CCFF2-F1F5-4BAA-A6A1-01144F4B6AE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E381F93F-BEF0-4D55-8DD0-EF3B333DCF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E381F93F-BEF0-4D55-8DD0-EF3B333DCF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E381F93F-BEF0-4D55-8DD0-EF3B333DCF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF8CCFF2-F1F5-4BAA-A6A1-01144F4B6AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8CCFF2-F1F5-4BAA-A6A1-01144F4B6AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8CCFF2-F1F5-4BAA-A6A1-01144F4B6AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8CCFF2-F1F5-4BAA-A6A1-01144F4B6AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
