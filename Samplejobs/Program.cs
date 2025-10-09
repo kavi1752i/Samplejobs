@@ -12,8 +12,13 @@ namespace Samplejobs
         static void Main(string[] args)
         {
             PatientRepository obj = new PatientRepository();
-            obj.GetPatients();
+            obj.MenuDriven();
 
+
+            
+            
+
+            
             // PatientManager m = new PatientManager();
             // m.MenuDriven();
 
@@ -39,10 +44,10 @@ namespace Samplejobs
              }
             */
 
-           
-                
 
-            
+
+
+
 
 
 
