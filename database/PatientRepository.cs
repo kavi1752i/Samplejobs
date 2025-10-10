@@ -50,23 +50,23 @@ namespace DBConnection
             try
             {
 
-                Console.WriteLine("Enter a index how many patients want to add");
+                Console.WriteLine("Enter a index how many patient want to add");
                 int a = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < a; i++)
                 {
 
                     PatientDetails data = new PatientDetails();
 
+                    Console.WriteLine("enter your patientid");
+                    data.patientid = Convert.ToInt32(Console.ReadLine());
+
                     Console.WriteLine("enter your patientname");
                     data.patientname = Console.ReadLine();
-                    1Console.WriteLine("enter your age");
+                    Console.WriteLine("enter your age");
                     data.age = Convert.ToInt32(Console.ReadLine());
-                    
-                   
+
                     Console.WriteLine("enter your city");
                     data.city = Console.ReadLine();
-
-
 
                     string sql = $"insert into patient values('{data.patientname}',{data.age},'{data.city }')";
                     var connection = new SqlConnection(connectionstring);
@@ -81,7 +81,8 @@ namespace DBConnection
                 throw;
             }
             catch (Exception ex)
-            {
+            { 
+     
                 throw;
             }
         }
@@ -89,28 +90,25 @@ namespace DBConnection
         {
             try
             {
-                Console.WriteLine("Enter a how many patient want to update ");
+                Console.WriteLine("Enter a patient id want to update ");
                 int b = Convert.ToInt32(Console.ReadLine());
-                for (int i = 0; i < b; i++)
                 {
-
-                    PatientDetails patients = new PatientDetails();
-                    Console.WriteLine("enter a id to update");
-                    patients.patientid = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("enter your patientname");
-                    patients.patientname = Console.ReadLine();
-                    Console.WriteLine("enter your age");
-                    patients.age = Convert.ToInt32(Console.ReadLine());
+                    PatientDetails p = new PatientDetails();
                     
-                    Console.WriteLine("enter your city");
-                    patients.city = Console.ReadLine();
+                    Console.WriteLine("enter a patientname");
+                    p.patientname = Console.ReadLine();
+                    Console.WriteLine("enter a patient age");
+                    p.age = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("enter a city");
+                    p.city = Console.ReadLine();
 
-
-                    string sql = $"update patient set patientname = '{patients.patientname}',age= {patients.age},city='{patients.city }' where patientid={patients.patientid}";
                     var connection = new SqlConnection(connectionstring);
                     connection.Open();
-                    var result = connection.Execute(sql);
+                    string updateQuery  = $"update patient set  patientname = @patientname,age=@age,city=@city where patientid=@patientid";
+                    var result = connection.Execute(updateQuery, new { patientname=p.patientname,age= p.age,city= p.city,patientid = b});
+                    
                     connection.Close();
+                    Console.WriteLine(result > 0 ? "record updated successfully" : "updated failed");
 
                 }
             }
@@ -154,14 +152,28 @@ namespace DBConnection
             try
             {
 
-                Console.WriteLine("enter a name to serach");
-                var name = Console.ReadLine();
+                Console.WriteLine("enter a patient id to serach");
+                var id = Convert.ToInt32( Console.ReadLine());
 
-                string sql = $"select*from patient where patientname like'%{name}%'";
+                
+
                 var connection = new SqlConnection(connectionstring);
                 connection.Open();
-                var result = connection.Execute(sql);
-                connection.Close();
+                string sql = $"select*from patient where patientid = @patientid";
+                var result = connection.QuerySingleOrDefault<PatientDetails>(sql,new { patientid = id });
+                if(result!=null)
+                {
+                    Console.WriteLine($"patientid:{result.patientid}");
+                    Console.WriteLine($"patientname:{result.patientname}");
+                    Console.WriteLine($"age:{result.age}");
+                    Console.WriteLine($"city:{result.city}");
+
+                }
+                else
+                {
+                    Console.WriteLine("patient does not found");
+                }
+                
 
             }
 
@@ -185,8 +197,14 @@ namespace DBConnection
                     var connection = new SqlConnection(connectionstring);
                     connection.Open();
                     var result = connection.Query<PatientDetails>(sql).ToList();
-                    connection.Close();
-                    return result;
+                    
+                Console.WriteLine("patient list");
+                foreach(var p in result)
+                {
+                    Console.WriteLine($"{p.patientid} | {p.patientname}|{p.age}|{p.city}");
+                }
+                connection.Close();
+                return result;
                 }
                 catch (SqlException ex)
                 {

@@ -149,8 +149,8 @@ namespace Json_ThreadOperation
 
                 Console.WriteLine("Enter a mobilenumber to update ");
                 long mobiletoupdate = Convert.ToInt64(Console.ReadLine());
-
-                Patient var = patients.FirstOrDefault(s => s.mobilenumber == mobiletoupdate);
+ 
+               Patient var = patients.FirstOrDefault(s => s.mobilenumber == mobiletoupdate);
 
                 if (var != null)
                 {
@@ -171,8 +171,6 @@ namespace Json_ThreadOperation
                     if (location != "") var.location = location;
                     savedata();
                     Console.WriteLine("patient added successfully");
-
-
                 }
                 else
                 {
