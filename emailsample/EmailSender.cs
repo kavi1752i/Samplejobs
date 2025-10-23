@@ -10,11 +10,25 @@ namespace EmailSample
 {
      public class EmailSender
     {
-        public void SendEmail()
-        {
+       
             string gmailAppPassword = "miyi tnsh aogk yyvi";
             string fromAddress = "kaviyarasi.nallathambi@gmail.com";
             string toAddress = "kaviyarasi1702@gmail.com";
+            string mailsubject = "Default";
+            string mailBody = "Default";
+
+        public EmailSender(string from, string to, string password, string subject, string body)
+        {
+            fromAddress = from;
+            toAddress = to;
+            gmailAppPassword = password;
+            mailsubject = subject;
+            mailBody = body;
+
+
+        }
+        public void SendEmail()
+            { 
 
             try
             {
@@ -22,8 +36,8 @@ namespace EmailSample
                 {
                     mail.From = new MailAddress(fromAddress);
                     mail.To.Add(toAddress);
-                    mail.Subject = "Test Email from c#";
-                    mail.Body = "<h1>Hello!</h1><p>This is a test email sent from c# using the Gmail SMTP server.</p>";
+                    mail.Subject = mailsubject;
+                    mail.Body = mailBody;
                     mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com",587))

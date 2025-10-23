@@ -14,11 +14,11 @@ namespace EmailSample
             {
                 string gmailpassword = "miyi tnsh aogk yyvi";
                 string fromAddress = "kaviyarasi.nallathambi@gmail.com";
-                string toAddress = "sureshkumar.duraisamy@gmail.com";
+                string toAddress = "kaviyarasi1702@gmail.com";
 
-                var email = new MimeMessage();
+            var email = new MimeMessage();
                 email.From.Add(new MailboxAddress("kaviyarasi", fromAddress));
-                email.To.Add(new MailboxAddress("sureshkumar", toAddress));
+                email.To.Add(new MailboxAddress("kavi", toAddress));
                 email.Subject = "Text Emailfrom c#(Mailkit)";
                 email.Body = new TextPart("plain")
                 {

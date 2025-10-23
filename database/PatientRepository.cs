@@ -105,8 +105,7 @@ namespace DBConnection
                     var connection = new SqlConnection(connectionstring);
                     connection.Open();
                     string updateQuery  = $"update patient set  patientname = @patientname,age=@age,city=@city where patientid=@patientid";
-                    var result = connection.Execute(updateQuery, new { patientname=p.patientname,age= p.age,city= p.city,patientid = b});
-                    
+                    var result = connection.Execute(updateQuery, new { patientname = p.patientname, age = p.age, city = p.city, patientid = b });
                     connection.Close();
                     Console.WriteLine(result > 0 ? "record updated successfully" : "updated failed");
 
@@ -154,8 +153,6 @@ namespace DBConnection
 
                 Console.WriteLine("enter a patient id to serach");
                 var id = Convert.ToInt32( Console.ReadLine());
-
-                
 
                 var connection = new SqlConnection(connectionstring);
                 connection.Open();

@@ -10,8 +10,7 @@ namespace DBConnection
     {
         public int patientid { get; set; }
         public string patientname { get; set; }
-        public int age { get; set; }
-        
+        public int age { get; set; }     
         public string city { get; set; }
 
 

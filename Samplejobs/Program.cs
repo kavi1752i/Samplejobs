@@ -1,24 +1,19 @@
 ﻿using System;
-using EmailSample;
-using Json_ThreadOperation;
 using Newtonsoft.Json;
-using DBConnection;
-
 
 namespace Samplejobs
 {
-    class Program
+    class program
     {
+
         static void Main(string[] args)
         {
-            PatientRepository obj = new PatientRepository();
-            obj.MenuDriven();
 
+            Httpclient obj = new Httpclient();
+            obj.Httpclientemail();
 
-            
-            
-
-            
+            // PatientRepository obj = new PatientRepository();
+            //obj.MenuDriven(); 
             // PatientManager m = new PatientManager();
             // m.MenuDriven();
 
@@ -44,15 +39,10 @@ namespace Samplejobs
              }
             */
 
-
-
-
-
-
-
-
-
-
         }
+
+
     }
 }
+        
+
