@@ -8,7 +8,7 @@ namespace Json_ThreadOperation
 {
    public class Patient
     {
-        public int id { get; set; }
+        public int patientid { get; set; }
         public string name { get; set; }
         public string emailid { get; set; }
         public long mobilenumber { get; set; }

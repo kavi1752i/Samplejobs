@@ -6,22 +6,13 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
 using Newtonsoft.Json;
-/*
+
 
 namespace Json_ThreadOperation
 {
     public class PatientManager
     {
         public List<Patient> patients = new List<Patient>();
-
-        public List<Patient> Getallpatient()
-        {
-            return patients;
-        }
-        public Patient Getpatientbyid(int id)
-        {
-          return  patients.FirstOrDefault(p => p.id == id);
-        }
 
 
         private string filepath = AppDomain.CurrentDomain.BaseDirectory + "\\data\\javascript.json";
@@ -57,7 +48,7 @@ namespace Json_ThreadOperation
             }
         }
 
-        
+       
 
         public Patient Add(Patient addpatient)
         {
@@ -69,7 +60,7 @@ namespace Json_ThreadOperation
 
         public Patient Update(Patient p)
         {
-                var existing = patients.FirstOrDefault(s => s.id == p.id);
+                var existing = patients.FirstOrDefault(s => s.patientid == p.patientid);
 
             if (existing != null)
             {
@@ -87,11 +78,11 @@ namespace Json_ThreadOperation
         public string  Delete(int id)
         {
        
-                var a = patients.FirstOrDefault(s => s.id ==id);
+                var a = patients.FirstOrDefault(s => s.patientid ==id);
                 
-                    if (a!= null)
+                    if(a!=null)
                     {
-                    Patient.Remove(a);
+                    patients.Remove(a);
                     return "patient deleted successfully";
                     }
             return "patient does not found";
@@ -104,7 +95,7 @@ namespace Json_ThreadOperation
     }
 
 }
-*/
+
 
 
 

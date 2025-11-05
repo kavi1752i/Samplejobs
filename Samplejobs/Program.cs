@@ -11,6 +11,9 @@ namespace Samplejobs
 
             Httpclient obj = new Httpclient();
             obj.Httpclientemail();
+            obj.Getpatientasync();
+            obj.updatepatientasync();
+            obj.Deletepatientasync();
 
             // PatientRepository obj = new PatientRepository();
             //obj.MenuDriven(); 
