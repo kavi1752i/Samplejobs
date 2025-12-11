@@ -10,10 +10,11 @@ using Newtonsoft.Json;
 using  Samplejobs.models;
 using System.Text.Json;
 
-
+/*
 
 namespace Samplejobs
 {
+    
     public class Httpclient
     {
         public bool Httpclientemail()
@@ -28,7 +29,7 @@ namespace Samplejobs
                     clientserver.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                     var email = new { FromAddress = "kaviyarasi.nallathambi@gmail.com", ToAddress = "kaviyarasi1702@gmail.com", Subject = "hello!", Content = "hai", gmailAppPassword = "miyi tnsh aogk yyvi" };
-                    var response = clientserver.PostAsJsonAsync("api/Email_", email);
+                    var response = clientserver.PostAsJsonAsync("/api/JsonCRUD", email);
                     var result = response.Result;
                     if (result.IsSuccessStatusCode)
                     {
@@ -60,13 +61,12 @@ namespace Samplejobs
                     clientserver.DefaultRequestHeaders.Accept.Clear();
                     clientserver.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var response = await clientserver.GetAsync("api/JSONOperation");
+                    var response = await clientserver.GetAsync("api/JsonCRUD");
 
                     if (response.IsSuccessStatusCode)
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         Console.WriteLine("Response from api");
-
                     }
                     else
                     {
@@ -107,7 +107,7 @@ namespace Samplejobs
 
                     };
                     var jsoncontent = new StringContent(System.Text.Json.JsonSerializer.Serialize(updatename));
-                    var response = await clientserver.PutAsync("api/JSONOperation",jsoncontent);
+                    var response = await clientserver.PutAsync("/api/JsonCRUD/Update/{id}", jsoncontent);
                     if (response.IsSuccessStatusCode)
                         {
                             string json = await response.Content.ReadAsStringAsync();
@@ -117,8 +117,6 @@ namespace Samplejobs
                         else
                         {
                             Console.WriteLine($"error:{response.StatusCode}");
-
-
                         }
 
                     }
@@ -142,7 +140,7 @@ namespace Samplejobs
                     clientserver.DefaultRequestHeaders.Accept.Clear();
                     clientserver.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var response = await clientserver.DeleteAsync("api/JSONOperation");
+                    var response = await clientserver.DeleteAsync("/api/JsonCRUD/Delete/{id}");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -153,8 +151,6 @@ namespace Samplejobs
                     else
                     {
                         Console.WriteLine($"error:{response.StatusCode}");
-
-
                     }
 
                 }
@@ -167,6 +163,7 @@ namespace Samplejobs
 
     }
 }
+    */
 
 
 

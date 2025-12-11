@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\database\DBConnection.csproj" />
+    <ProjectReference Include="..\JSON javascript\JSON_ThreadOperation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="data\javascript.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

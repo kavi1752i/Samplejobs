@@ -53,6 +53,7 @@ namespace Json_ThreadOperation
         public Patient Add(Patient addpatient)
         {
             patients.Add(addpatient);
+            savedata();
             return addpatient;
         }
 
@@ -68,11 +69,10 @@ namespace Json_ThreadOperation
                 existing.emailid = p.emailid;
                 existing.address = p.address;
                 existing.location = p.location;
+                savedata();
                 
             }
             return existing;
-            
-            
         }
 
         public string  Delete(int id)
@@ -83,14 +83,13 @@ namespace Json_ThreadOperation
                     if(a!=null)
                     {
                     patients.Remove(a);
+                savedata();
                     return "patient deleted successfully";
                     }
             return "patient does not found";
 
             }
             
-        
-        
 
     }
 
